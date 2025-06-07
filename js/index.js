@@ -15,7 +15,7 @@ function crearCuenta(){
     
     // Validar que haya clientes
     if (clientes.length === 0) {
-    alert("No hay clientes registrados. Primero crea un cliente.")
+    alert("No hay clientes registrados, primero crea un cliente.")
     return
     }
 
@@ -34,7 +34,7 @@ function crearCuenta(){
 
     const numeroCuenta = cliente.cuentas.length + 1
     cliente.cuentas.push({numero: numeroCuenta, saldo: 0})
-    return alert(`Cuenta de ahorros ${numeroCuenta} creada para ${cliente.nombre}`)
+    return alert(`Cuenta de ahorros #: ${numeroCuenta} creada para ${cliente.nombre}`)
 
 }
 
@@ -43,7 +43,7 @@ function retirarDinero(){
 
     // Validar que haya clientes
     if (clientes.length === 0) {
-    alert("No hay clientes registrados. Primero crea un cliente.")
+    alert("No hay clientes registrados, primero crea un cliente.")
     return
     }
 
@@ -68,10 +68,10 @@ function retirarDinero(){
     // Mostrar las cuentas disponibles con saldo
     let mensaje = "Cuentas disponibles:\n"
     cliente.cuentas.forEach(cuenta => {
-        mensaje += `Cuenta ID: ${cuenta.numero} - Saldo: ${cuenta.saldo.toFixed(2)}\n`
+        mensaje += `Cuenta #: ${cuenta.numero} - Saldo: ${cuenta.saldo.toFixed(2)}\n`
     })
 
-    const idCuenta = parseInt(prompt(`${mensaje}\nIngresa el ID de la cuenta de la cual deseas retirar: `))
+    const idCuenta = parseInt(prompt(`${mensaje}\nIngresa el # de la cuenta de la cual deseas retirar: `))
     const cuenta = cliente.cuentas.find(c => c.numero === idCuenta)
 
     if (!cuenta) {
@@ -101,7 +101,7 @@ function abonarDinero(){
     
     // Validar que haya clientes
     if (clientes.length === 0) {
-    alert("No hay clientes registrados. Primero crea un cliente.")
+    alert("No hay clientes registrados, primero crea un cliente.")
     return
     }
 
@@ -126,10 +126,10 @@ function abonarDinero(){
     // Mostrar las cuentas disponibles con saldo
     let mensaje = "Cuentas disponibles:\n"
     cliente.cuentas.forEach(cuenta => {
-        mensaje += `Cuenta ID: ${cuenta.numero} - Saldo: ${cuenta.saldo.toFixed(2)}\n`
+        mensaje += `Cuenta #: ${cuenta.numero} - Saldo: ${cuenta.saldo.toFixed(2)}\n`
     })
 
-    const idCuenta = parseInt(prompt(`${mensaje}\nIngresa el ID de la cuenta de la cual deseas abonar: `))
+    const idCuenta = parseInt(prompt(`${mensaje}\nIngresa el # de la cuenta de la cual deseas abonar: `))
     const cuenta = cliente.cuentas.find(c => c.numero === idCuenta)
 
     if (!cuenta) {
